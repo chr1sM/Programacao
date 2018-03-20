@@ -19,10 +19,3 @@ if media >= 9.5:
     print("O aluno esta aprovado com", media, "de media")
 else:
     print("O aluno esta reprovado com", media, "de media")
-
-media = float((nota1 * 25 + nota2 * 35 + nota3 * 40) / 100)
-
-if media >= 9.5:
-    print("O aluno esta aprovado com",media,"de media")
-else:
-    print("O aluno esta reprovado com",media,"de media")
