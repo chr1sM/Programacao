@@ -9,10 +9,10 @@ valor = float(input('Introduza o valor: '))
 caracter = input('Escolha o caracter que queira E ou D: ')
 
 def conversao(valor, caracter , dolar , euro):
-    if caracter == "d":
+    if caracter == "d" or caracter == "D":
         totald = valor * euro
         print('Conversao de dolares para euros {0:.2f} €'.format(totald))
-    elif caracter == "e":
+    elif caracter == "e" or caracter == 'E':
         totale = valor * dolar
         print('Conversao de euros para Dolares {0:.2f} $'.format(totale))
 
