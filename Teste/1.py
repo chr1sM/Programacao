@@ -8,14 +8,15 @@ for x in range (0, 9) :
 playerOneTurn = True
 winner = False
 
-def printBoard() :
-    print( '\n -----')
-    print( '|' + choices[0] + '|' + choices[1] + '|' + choices[2] + '|')
-    print( ' -----')
-    print( '|' + choices[3] + '|' + choices[4] + '|' + choices[5] + '|')
-    print( ' -----')
-    print( '|' + choices[6] + '|' + choices[7] + '|' + choices[8] + '|')
-    print( ' -----\n')
+def printBoard():
+    print(' | A | B | C |')
+    print( '--------------')
+    print( '1| '   '  | '   '  | '   '  |')
+    print( '--------------')
+    print( '2| '   '  | '   '  | '   '  |')
+    print( '--------------')
+    print( '3| '   '  | '   '  | '   '  |')
+    print( '--------------')
 
 while not winner :
     printBoard()
