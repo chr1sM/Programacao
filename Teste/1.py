@@ -1,59 +1,137 @@
-from __future__ import print_function
+"""
+Jogo do Galo
+"""
 
-choices = []
 
-for x in range (0, 9) :
-    choices.append(str(x + 1))
+class tabuleiro():
+    def __init__(self):
+        self.tabuleiro = [ [None, None, None],
+                       [None, None, None], 
+                       [None, None, None] ]
+        
 
-playerOneTurn = True
+    def __str__(self): #Foi buscar a Internet (https://github.com/Armindo123/prog1/blob/master/trabalhopratico/jogodogalo/T_Tabuleiro.py)
+        stroutput = "  |A|B|C|"
+        for i in range(0, 3):
+            stroutput += "\n" + str(i+1) + "|"
+            for j in range(0, 3):
+                if self.tabuleiro[i][j] == None:
+                    stroutput += " |"
+                else:
+                    stroutput += self.tabuleiro[i][j] + "|"
+        return stroutput
+
+#Colocar o token na coluna e linha certa
+    def validarjogada(self, jogada, token):        
+        if (jogada[0] == "A" or jogada[0] == "B" or jogada[0] == "C") and (jogada[1] == "1" or jogada[1] == "2" or jogada[1] == "3"):
+
+            if jogada[0] == "A":
+                coluna = 0
+                linha = int(jogada[1]) - 1
+                if self.tabuleiro[linha][coluna] == None:
+                    self.tabuleiro[linha][coluna] = token
+                else:
+                    print("Jogada invalida!")
+                    jogada = input("Tente outravez!\n>> ")
+                    self.validarjogada(jogada,token)
+            if jogada[0] == "B":
+                coluna = 1
+                linha = int(jogada[1]) - 1
+                if self.tabuleiro[linha][coluna] == None:
+                    self.tabuleiro[linha][coluna] = token
+                else:
+                    print("Jogada invalida!")
+                    jogada = input("Tente outravez!\n>> ")
+                    self.validarjogada(jogada,token)
+            if jogada[0] == "C":
+                coluna = 2
+                linha = int(jogada[1]) - 1
+                if self.tabuleiro[linha][coluna] == None:
+                    self.tabuleiro[linha][coluna] = token
+                else:
+                    print("Jogada invalida!")
+                    jogada = input("Tente outravez!\n>> ")
+                    self.validarjogada(jogada,token)
+        else:
+            print("Jogada invalida!")
+            jogada = input("Tente outravez!\n>> ")
+            self.validarjogada(jogada,token)
+
+     #Fui buscar a interner https://github.com/Armindo123/prog1/blob/master/trabalhopratico/jogodogalo/T_Tabuleiro.py
+    def ver(self, token, nome):
+        if(self.tabuleiro[0][0] == token and self.tabuleiro[0][1] == token and self.tabuleiro[0][2] == token) or \
+          (self.tabuleiro[1][0] == token and self.tabuleiro[1][1] == token and self.tabuleiro[1][2] == token) or \
+          (self.tabuleiro[2][0] == token and self.tabuleiro[2][1] == token and self.tabuleiro[2][2] == token) or \
+          (self.tabuleiro[0][0] == token and self.tabuleiro[1][0] == token and self.tabuleiro[2][0] == token) or \
+          (self.tabuleiro[0][1] == token and self.tabuleiro[1][1] == token and self.tabuleiro[1][2] == token) or \
+          (self.tabuleiro[0][2] == token and self.tabuleiro[1][2] == token and self.tabuleiro[2][2] == token) or \
+          (self.tabuleiro[0][0] == token and self.tabuleiro[1][1] == token and self.tabuleiro[2][2] == token) or \
+          (self.tabuleiro[2][0] == token and self.tabuleiro[1][1] == token and self.tabuleiro[0][2] == token):
+            global winner
+            print("Vencedor")
+            winner = True
+        return winner
+
+###############################################
+
+#Defenir o nome e o token do jogador
+class jogador():
+    
+    def __init__(self):
+        self.nome = ""
+        self.token = ""
+
+
+    def validarjogador(self):
+        while j1.token == j2.token:
+            print("Token do Jogador 2 repetido!")
+            j2.token = input("[Jogador 2] Introduza um novo Token: ")
+        return self.token
+
+###############################################
+
+#Introducao dos dados
+j1 = jogador()
+j1.nome = input('Introduza o seu nome: ')
+j1.token = input('Introduza um token: ')
+
+j2 = jogador()
+j2.nome = input('Introduza o seu nome: ')
+j2.token = input('Introduza um token: ')
+
+
+t = tabuleiro()
+j1.validarjogador()
+t.__str__()
+num_max_jogadas = 0
+
+##############################################
+#Jogada
 winner = False
-
-def printBoard():
-    print(' | A | B | C |')
-    print( '--------------')
-    print( '1| '   '  | '   '  | '   '  |')
-    print( '--------------')
-    print( '2| '   '  | '   '  | '   '  |')
-    print( '--------------')
-    print( '3| '   '  | '   '  | '   '  |')
-    print( '--------------')
-
-while not winner :
-    printBoard()
-
-    if playerOneTurn :
-        print( "Player 1:")
-    else :
-        print( "Player 2:")
-
-    try:
-        choice = int(input(">> "))
-    except:
-        print("please enter a valid field")
-        continue
-    if choices[choice - 1] == 'X' or choices [choice-1] == 'O':
-        print("illegal move, plase try again")
-        continue
-
-    if playerOneTurn :
-        choices[choice - 1] = 'X'
-    else :
-        choices[choice - 1] = 'O'
-
-    playerOneTurn = not playerOneTurn
-
-    for x in range (0, 3) :
-        y = x * 3
-        if (choices[y] == choices[(y + 1)] and choices[y] == choices[(y + 2)]) :
-            winner = True
-            printBoard()
-        if (choices[x] == choices[(x + 3)] and choices[x] == choices[(x + 6)]) :
-            winner = True
-            printBoard()
-
-    if((choices[0] == choices[4] and choices[0] == choices[8]) or 
-       (choices[2] == choices[4] and choices[4] == choices[6])) :
-        winner = True
-        printBoard()
-
-print ("Player " + str(int(playerOneTurn + 1)) + " wins!\n")
+while num_max_jogadas < 9:
+    print(t)
+    jogada = input("{} Escolha as coordenadas! (COM MAIUSCULAS)\n Se quiser desistir pressione a tecla 9.\n>>  ".format(j1.nome))
+    if jogada == 9:
+        print("O {} desistiu! \n O vencedor é o {}.  ".format(j1.nome,j2.nome))
+        break
+    t.validarjogada(jogada,j1.token)
+    print(t)
+    t.ver(j1.nome, j1.token)
+    if winner == True:
+        print("O vencedor é ",j1.nome)
+        break
+    num_max_jogadas += 1
+    if num_max_jogadas == 9:
+        print("Empate")
+        break
+    jogada = input("{} Escolha as coordenadas! (COM MAIUSCULAS)\n Se quiser desitir pressione a tecla 9.\n>>  ".format(j2.nome))
+    if jogada == 9:
+        print("O {} desistiu! \n O vencedor é o {}.  ".format(j1.nome,j2.nome))
+        break
+    t.validarjogada(jogada,j2.token)
+    print(t)
+    t.ver(j2.nome, j2.token)
+    if winner == True:
+        print("O vencedor é ",j2.nome)
+        break
+num_max_jogadas += 1
