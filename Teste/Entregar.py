@@ -5,9 +5,9 @@ Jogo do Galo
 
 class Tabuleiro():
     def __init__(self):
-        self.lista = [ [None, None, None],
+        self.lista = [[None, None, None],
                        [None, None, None], 
-                       [None, None, None] ]
+                       [None, None, None]]
         
 
     def __str__(self): #Foi buscar a internet (https://github.com/Armindo123/prog1/blob/master/trabalhopratico/jogodogalo/T_Tabuleiro.py)
