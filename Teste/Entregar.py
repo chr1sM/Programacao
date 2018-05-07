@@ -63,8 +63,8 @@ class Tabuleiro():
             (self.lista[1][0] == token and self.lista[1][1] == token and self.lista[1][2] == token) or \
             (self.lista[2][0] == token and self.lista[2][1] == token and self.lista[2][2] == token) or \
             (self.lista[0][0] == token and self.lista[1][0] == token and self.lista[2][0] == token) or \
-            (self.lista[1][0] == token and self.lista[1][1] == token and self.lista[1][2] == token) or \
-            (self.lista[2][0] == token and self.lista[2][1] == token and self.lista[2][2] == token) or \
+            (self.lista[0][1] == token and self.lista[1][1] == token and self.lista[2][1] == token) or \
+            (self.lista[0][2] == token and self.lista[1][2] == token and self.lista[2][2] == token) or \
             (self.lista[0][0] == token and self.lista[1][1] == token and self.lista[2][2] == token) or \
             (self.lista[2][0] == token and self.lista[1][1] == token and self.lista[0][2] == token):
             global winner
