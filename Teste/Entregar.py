@@ -130,20 +130,19 @@ j2.token = input('Introduza um token: ')
 
 t = Tabuleiro()
 j1.validarjogador()
-t.__str__()
 num_max_jogadas = 0
 winner = False
 ##############################################
 #Jogada
 while num_max_jogadas < 9:
-    print(t.__str__())
+    print(t)
     jogada = input("{} Escolha as coordenadas\nSe quiser sair pressione a tecla 9.\n>>  ".format(j1.nome))
     if jogada == "9":
         print("O {} desistiu!! \nO venncedor é o {}. ".format(j1.nome, j2.nome))
         break
     else:
         t.validarjogada(jogada, j1.token)
-        print(t.__str__())
+        print(t)
         t.ver(j1.nome, j1.token)
     if winner == True:
         print("O vencedor é ", j1.nome)
@@ -158,7 +157,7 @@ while num_max_jogadas < 9:
         break
     else:
         t.validarjogada(jogada, j2.token)
-        print(t.__str__())
+        print(t)
         t.ver(j2.nome, j2.token)
     if winner == True:
         print("O vencedor é ", j2.nome)
