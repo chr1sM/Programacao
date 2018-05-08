@@ -12,7 +12,7 @@ class Tabuleiro():
                        [None, None, None] ]
 
  #Foi buscar a internet (https://github.com/Armindo123/prog1/blob/master/trabalhopratico/jogodogalo/T_Tabuleiro.py
-#Faz a tabela       
+#Faz a print da tabela
     def __str__(self): 
         stroutput = "  A|B|C|"
         for i in range(0, 3):
