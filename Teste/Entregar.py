@@ -87,7 +87,6 @@ class Tabuleiro():
             jogada = input("Tente outravez!\n>> ")
             self.validarjogada(jogada,token)
 
-#Fui buscar a interner (https://github.com/Armindo123/prog1/blob/master/trabalhopratico/jogodogalo/T_Tabuleiro.py)
     def ver(self, token, nome):
         if (self.lista[0][0] == token and self.lista[0][1] == token and self.lista[0][2] == token) or \
             (self.lista[1][0] == token and self.lista[1][1] == token and self.lista[1][2] == token) or \
