@@ -31,7 +31,7 @@ class Tabuleiro():
         if (jogada[0] == "A" or jogada[0] == "B" or jogada[0] == "C" or jogada[0] == "a" or jogada[0] == "b" or jogada[0] == "c" ) and (jogada[1] == "1" or jogada[1] == "2" or jogada[1] == "3"):
             if jogada[0] == "A":
                 coluna = 0
-                linha = int(jogada [1]) - 1
+                linha = int(jogada[1]) - 1
                 if self.lista[linha][coluna] == None:
                     self.lista[linha][coluna] = token
                 else:
@@ -40,7 +40,7 @@ class Tabuleiro():
                     self.validarjogada(jogada,token)
             if jogada[0] == "B":
                 coluna = 1
-                linha = int(jogada [1]) - 1
+                linha = int(jogada[1]) - 1
                 if self.lista[linha][coluna] == None:
                     self.lista[linha][coluna] = token
                 else:
@@ -49,7 +49,7 @@ class Tabuleiro():
                     self.validarjogada(jogada,token)
             if jogada[0] == "C": 
                 coluna = 2
-                linha = int(jogada [1]) - 1
+                linha = int(jogada[1]) - 1
                 if self.lista[linha][coluna] == None:
                     self.lista[linha][coluna] = token
                 else:
@@ -58,7 +58,7 @@ class Tabuleiro():
                     self.validarjogada(jogada,token)
             if jogada[0] == "a":
                 coluna = 0
-                linha = int(jogada [1]) - 1
+                linha = int(jogada[1]) - 1
                 if self.lista[linha][coluna] == None:
                     self.lista[linha][coluna] = token
                 else:
@@ -67,7 +67,7 @@ class Tabuleiro():
                     self.validarjogada(jogada,token)
             if jogada[0] == "b":
                 coluna = 1
-                linha = int(jogada [1]) - 1
+                linha = int(jogada[1]) - 1
                 if self.lista[linha][coluna] == None:
                     self.lista[linha][coluna] = token
                 else:
@@ -76,7 +76,7 @@ class Tabuleiro():
                     self.validarjogada(jogada,token)
             if jogada[0] == "c": 
                 coluna = 2
-                linha = int(jogada [1]) - 1
+                linha = int(jogada[1]) - 1
                 if self.lista[linha][coluna] == None:
                     self.lista[linha][coluna] = token
                 else:
