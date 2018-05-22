@@ -4,5 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="8_odenacao_pesquisa_ficheiros" />
+    <orderEntry type="module" module-name="7_colecoes" />
   </component>
 </module>

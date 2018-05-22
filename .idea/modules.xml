@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../7_colecoes/.idea/7_colecoes.iml" filepath="$PROJECT_DIR$/../7_colecoes/.idea/7_colecoes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../8_odenacao_pesquisa_ficheiros/.idea/8_odenacao_pesquisa_ficheiros.iml" filepath="$PROJECT_DIR$/../8_odenacao_pesquisa_ficheiros/.idea/8_odenacao_pesquisa_ficheiros.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Programacao.iml" filepath="$PROJECT_DIR$/.idea/Programacao.iml" />
     </modules>
   </component>
