@@ -38,6 +38,8 @@ for n in line:
 sort(list)
 print(list)
 
+for n in range(len(list)-1, -1, -1):
+ print(list[n], end=", ")
 
 file.close()
 
